@@ -58,7 +58,7 @@ flutter:
       mapContent[key] = value;
     }
     mapContent.forEach((key, value) {
-      buffer.writeln('String get $key => \'$path$value\';');
+      buffer.writeln('static const String $key = \'$path$value\';');
     });
   }
 }
