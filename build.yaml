@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      gen_res:
+        enabled: true
+
+builders:
+  gen_res:
+    import: "package:gen_res/gen_res.dart"
+    builder_factories: [ "build" ]
+    build_extensions: { "$lib$": [ ".g.dart" ] }
+    auto_apply: dependents
+    build_to: source
