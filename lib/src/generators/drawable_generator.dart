@@ -58,7 +58,8 @@ flutter:
       mapContent[key] = value;
     }
     mapContent.forEach((key, value) {
-      buffer.writeln('static const String $key = \'$path$value\';');
+      final String name = '${value.fileExtension.toLowerCase() == 'svg' ? 'svg_' : ''}$key';
+      buffer.writeln('static const String $name = \'$path$value\';');
     });
   }
 }

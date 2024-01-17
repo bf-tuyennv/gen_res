@@ -56,4 +56,6 @@ extension StringExt on String {
 
     return words;
   }
+
+  String get fileExtension => split('.').last;
 }
