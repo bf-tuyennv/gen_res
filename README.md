@@ -25,3 +25,5 @@ gen_res:
   colors:
     enabled: true
 """
+
+Run "dart run gen_res" or using build_runner "flutter pub run build_runner build --delete-conflicting-outputs" to start generate resources
