@@ -61,6 +61,8 @@ gen_res:
 
   drawable:
     enabled: true
+    output: ../app_images.dart
+    class_name: AppImages
 
   fonts:
     enabled: true

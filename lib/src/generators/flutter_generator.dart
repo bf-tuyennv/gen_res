@@ -61,7 +61,7 @@ class Generator {
           formatter: formatter,
         );
         final generated = generator.generate();
-        final assets = File(normalize(join(pubspecFile.parent.path, output, drawablesName)));
+        final assets = File(normalize(join(pubspecFile.parent.path, output, config.pubspec.genRes.drawables.output ?? drawablesName)));
         FileUtils.writeAsString(generated, file: assets);
         stdout.writeln('Generated: ${assets.absolute.path}');
       }
