@@ -8,7 +8,7 @@ Add these lines into pubspec.yaml
 gen_res:
     git:
       url: https://github.com/bf-tuyennv/gen_res
-      ref: main
+      ref: master_2
 ```
 
 ## Usage
