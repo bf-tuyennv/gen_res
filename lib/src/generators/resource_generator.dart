@@ -32,8 +32,8 @@ class ResourceGenerator {
     buffer.writeln('class R {');
     buffer.writeln('R._();');
     buffer.writeln();
-    if (drawablesName != null) buffer.writeln('static final drawable = Drawables();');
-    if (stringsName != null) buffer.writeln('static final string = Strings();');
+    if (drawablesName != null) buffer.writeln('static final drawable = AppImages();');
+    if (stringsName != null) buffer.writeln('static final string = AppLabels();');
     if (colorsName != null) buffer.writeln('static final color = Colors();');
     if (fontsName != null) buffer.writeln('static final font = Fonts();');
     // buffer.writeln('//static final dimen = Dimens();');

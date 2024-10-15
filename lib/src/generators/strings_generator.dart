@@ -32,7 +32,7 @@ flutter:
     buffer.writeln(header);
     buffer.writeln(ignoreAnalysis);
     buffer.writeln("\nimport 'package:easy_localization/easy_localization.dart';\n");
-    buffer.writeln('class Strings {');
+    buffer.writeln('class AppLabels {');
 
     lines.removeAt(0);
 

@@ -38,7 +38,7 @@ flutter:
     buffer.writeln(header);
     buffer.writeln(ignoreAnalysis);
     buffer.writeln();
-    buffer.writeln('class Drawables {');
+    buffer.writeln('class AppImages {');
     generateContent(buffer, path);
     buffer.writeln('}');
 
