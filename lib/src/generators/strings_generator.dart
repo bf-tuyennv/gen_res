@@ -1,16 +1,21 @@
 import 'dart:io';
 
+import 'package:csv/csv.dart';
 import 'package:dart_style/dart_style.dart';
 import '../models/pubspec.dart';
 import '../utils/error.dart';
 import '../utils/logger.dart';
 import 'generator_helper.dart';
+import 'package:csv/csv_settings_autodetection.dart';
 
 class StringGenerator {
   StringGenerator({
     required this.pubspec,
     required this.formatter,
   });
+  static const csvSettingsDetector =
+      FirstOccurrenceSettingsDetector(eols: ['\r\n', '\n']);
+
   final Pubspec pubspec;
   final DartFormatter formatter;
 
@@ -23,20 +28,27 @@ flutter:
     - ${pubspec.genRes.strings.path}""");
     }
 
-    final List<String> lines = await File(pubspec.genRes.strings.path).readAsLines();
-    if (lines.isEmpty) {
-      throw const InvalidSettingsException('The value of "flutter/strings:" is incorrect.');
+    final String translationContent =
+        await File(pubspec.genRes.strings.path).readAsString();
+    if (translationContent.isEmpty) {
+      throw const InvalidSettingsException(
+          'The value of "flutter/strings:" is incorrect.');
     }
+
+    final List<List<String>> lines =
+        CsvToListConverter(csvSettingsDetector: csvSettingsDetector)
+            .convert(translationContent, fieldDelimiter: ',');
 
     final buffer = StringBuffer();
     buffer.writeln(header);
     buffer.writeln(ignoreAnalysis);
-    buffer.writeln("\nimport 'package:easy_localization/easy_localization.dart';\n");
+    buffer.writeln(
+        "\nimport 'package:easy_localization/easy_localization.dart';\n");
     buffer.writeln('class AppLabels {');
 
     lines.removeAt(0);
 
-    for (final String line in lines) {
+    for (final List<String> line in lines) {
       buffer.writeln(_genLine(line));
     }
 
@@ -44,24 +56,27 @@ flutter:
     return formatter.format(buffer.toString());
   }
 
-  String _genLine(String line) {
-    final List<String> values = line.split(',');
-    final String key = values.first;
-    values.removeAt(0);
+  String _genLine(List<String> line) {
+    final String key = line.first;
+    line.removeAt(0);
 
     bool hasArgument = false;
     bool hasNamedArgument = false;
 
-    for (String value in values) {
+    for (String value in line) {
       hasArgument = _hasArgument(value) || hasArgument;
       hasNamedArgument = _hasNamedArgument(value) || hasNamedArgument;
       if (hasArgument && hasNamedArgument) {
         return '///$line\nString $key({List<String>? args, Map<String, String>? namedArgs}) => \'$key\'.tr(args: args, namedArgs: namedArgs);';
       }
     }
-    
-    if (hasArgument) return '///$line\nString $key({List<String>? args}) => \'$key\'.tr(args: args);';
-    if (hasNamedArgument) return '///$line\nString $key({Map<String, String>? namedArgs}) => \'$key\'.tr(namedArgs: namedArgs);';
+
+    if (hasArgument) {
+      return '///$line\nString $key({List<String>? args}) => \'$key\'.tr(args: args);';
+    }
+    if (hasNamedArgument) {
+      return '///$line\nString $key({Map<String, String>? namedArgs}) => \'$key\'.tr(namedArgs: namedArgs);';
+    }
 
     return '///$line\nString get $key => \'$key\'.tr();';
   }

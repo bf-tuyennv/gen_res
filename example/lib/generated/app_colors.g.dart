@@ -9,7 +9,7 @@ library;
 import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
 
-class Colors {
+class AppColors {
   /// Color: #000000
   Color get black => const Color(0xFF000000);
 

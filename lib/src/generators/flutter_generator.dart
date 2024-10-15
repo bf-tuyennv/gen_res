@@ -18,8 +18,8 @@ class Generator {
   const Generator(
     this.pubspecFile, {
     this.drawablesName = 'app_images.g.dart',
-    this.colorsName = 'colors.g.dart',
-    this.fontsName = 'fonts.g.dart',
+    this.colorsName = 'app_colors.g.dart',
+    this.fontsName = 'app_fonts.g.dart',
     this.stringsName = 'app_labels.g.dart',
   });
 

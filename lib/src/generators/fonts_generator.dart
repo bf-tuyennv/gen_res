@@ -23,7 +23,7 @@ class FontGenerator {
     final buffer = StringBuffer();
     buffer.writeln(header);
     buffer.writeln(ignoreAnalysis);
-    buffer.writeln('class Fonts {');
+    buffer.writeln('class AppFonts {');
     buffer.writeln();
 
     fonts.map((element) => element.family).distinct().sorted().forEach((family) {

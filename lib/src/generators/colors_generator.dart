@@ -34,7 +34,7 @@ class ColorGenerator {
     buffer.writeln("import 'package:flutter/painting.dart';");
     buffer.writeln("import 'package:flutter/material.dart';");
     buffer.writeln();
-    buffer.writeln('class Colors {');
+    buffer.writeln('class AppColors {');
     buffer.writeln();
 
     final colorList = <_Color>[];
