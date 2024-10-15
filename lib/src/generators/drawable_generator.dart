@@ -38,7 +38,7 @@ flutter:
     buffer.writeln(header);
     buffer.writeln(ignoreAnalysis);
     buffer.writeln();
-    buffer.writeln('class ${pubspec.genRes.drawables.className ?? 'Drawables'} {');
+    buffer.writeln('class Drawables {');
     generateContent(buffer, path);
     buffer.writeln('}');
 
@@ -58,8 +58,7 @@ flutter:
       mapContent[key] = value;
     }
     mapContent.forEach((key, value) {
-      final String name = '${value.fileExtension.toLowerCase() == 'svg' ? 'svg_' : ''}$key';
-      buffer.writeln('static const String $name = \'$path$value\';');
+      buffer.writeln('String get $key => \'$path$value\';');
     });
   }
 }

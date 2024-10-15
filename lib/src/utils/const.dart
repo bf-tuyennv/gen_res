@@ -7,21 +7,21 @@ name: ${Const.invalidStringValue}
 gen_res:
   output: lib/generated/
   line_length: 120
-  generate_R: false
+  generate_R: true
 
   drawable:
-    enabled: false
+    enabled: true
     path: assets/images/
 
   strings:
-    enabled: false
+    enabled: true
     path: assets/translations/langs.csv
     
   fonts:
-    enabled: false
+    enabled: true
 
   colors:
-    enabled: false
+    enabled: true
     path: assets/colors/colors.xml
 
 flutter:

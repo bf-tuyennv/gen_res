@@ -2,7 +2,6 @@
 /// *****************************************************
 ///  GenRes
 /// *****************************************************
-library;
 
 // ignore_for_file: directives_ordering,unnecessary_import,constant_identifier_names,non_constant_identifier_names
 

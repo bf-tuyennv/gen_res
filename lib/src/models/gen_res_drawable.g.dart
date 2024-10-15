@@ -14,7 +14,5 @@ GenResDrawable _$GenResDrawableFromJson(Map json) {
   return GenResDrawable(
     enabled: json['enabled'] as bool,
     path: json['path'] as String,
-    output: json['output'] as String?,
-    className: json['class_name'] as String?,
   );
 }
