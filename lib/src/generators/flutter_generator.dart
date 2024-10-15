@@ -17,10 +17,10 @@ import '../utils/version.dart';
 class Generator {
   const Generator(
     this.pubspecFile, {
-    this.drawablesName = 'drawables.g.dart',
+    this.drawablesName = 'app_images.g.dart',
     this.colorsName = 'colors.g.dart',
     this.fontsName = 'fonts.g.dart',
-    this.stringsName = 'strings.g.dart',
+    this.stringsName = 'app_labels.g.dart',
   });
 
   final File pubspecFile;
