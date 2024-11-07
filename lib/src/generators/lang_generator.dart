@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:csv/csv.dart';
 import 'package:excel/excel.dart';
 import '../models/pubspec.dart';
@@ -13,12 +12,11 @@ class LangGenerator {
   LangGenerator({
     required this.pubspec,
   });
+
   static const csvSettingsDetector =
       FirstOccurrenceSettingsDetector(eols: ['\r\n', '\n']);
 
   final Pubspec pubspec;
-
-  /// Generate extended file
   final String xlsxFilePath = 'assets/translations/language_source.xlsx';
   final String csvFilePath = 'assets/translations/langs.csv';
   final List<String> langs = ['EN', 'FR'];
@@ -50,30 +48,28 @@ flutter:
             .convert(rawList[0], fieldDelimiter: ','));
     final List<String> existedWords = _generateExistedFile();
     final List<String> extendedLangs = _generateExtendedFile();
-    buffer.writeln(existedWords.join('\n'));
-    buffer.writeln(separator);
-    buffer.writeln(extendedLangs.join('\n'));
+    buffer
+      ..writeln(existedWords.join('\n'))
+      ..writeln(separator)
+      ..writeln(extendedLangs.join('\n'));
 
     return buffer.toString();
   }
 
   List<String> _generateExistedFile() {
-    final List<String> parsedLangs = [];
-    for (final List<String> line in existedLangs) {
-      final String? parsedLine = _convertListToLine(line);
-      if (parsedLine == null) continue;
-      parsedLangs.add(parsedLine);
-    }
-    return parsedLangs;
+    return existedLangs
+        .map((line) => _convertListToLine(line))
+        .where((parsedLine) => parsedLine != null)
+        .cast<String>()
+        .toList();
   }
 
   List<String> _generateExtendedFile() {
     final List<String> parsedLangs = [];
-    print('Generating language files...');
     final File xlsxFile = File(xlsxFilePath);
-    print('File path: ${xlsxFile.existsSync()}');
     final bytes = xlsxFile.readAsBytesSync();
     final excel = Excel.decodeBytes(bytes);
+
     for (final String table in excel.tables.keys) {
       final List<List<Data?>>? rowsInSheet = excel.tables[table]?.rows;
       final List<String> lines = _parseSheet(rowsInSheet: rowsInSheet);
@@ -86,15 +82,15 @@ flutter:
     final List<String> parsedLangs = [];
     _parseLanguage(rowsInSheet ?? []);
     for (final String key in keys) {
-      final List<String> line = [];
-      line.add(key);
+      final List<String> line = [key];
       for (final String lang in langs) {
-        final String value = langMap[lang]![key] ?? '';
+        final String value = langMap[lang]?[key] ?? '';
         line.add(value);
       }
       final String? parsedLine = _convertListToLine(line);
-      if (parsedLine == null) continue;
-      parsedLangs.add(parsedLine);
+      if (parsedLine != null) {
+        parsedLangs.add(parsedLine);
+      }
     }
     return parsedLangs;
   }
@@ -105,20 +101,20 @@ flutter:
   }
 
   void _parseLanguage(List<List<Data?>> rows) {
-    final List<(String, int)> langIndexes = [];
-    for (final String lang in langs) {
-      final int langIndex = rows.first.indexWhere((final Data? cell) {
-        final CellValue? value = cell?.value;
-        if (value is TextCellValue) {
-          return value.value.text == lang;
-        }
-        return false;
-      });
-      if (langIndex != -1) {
-        langMap[lang] = {};
-        langIndexes.add((lang, langIndex));
-      }
-    }
+    final List<(String, int)> langIndexes = langs
+        .map((lang) {
+          final int langIndex = rows.first.indexWhere((cell) {
+            final CellValue? value = cell?.value;
+            return value is TextCellValue && value.value.text == lang;
+          });
+          if (langIndex != -1) {
+            langMap[lang] = {};
+            return (lang, langIndex);
+          }
+          return null;
+        })
+        .whereType<(String, int)>()
+        .toList();
 
     for (final List<Data?> row in rows.skip(1)) {
       final Data? keyCell = row.first;
@@ -128,7 +124,6 @@ flutter:
         continue;
       }
       final String key = keyValue.value.text ?? '';
-      // Remove the key if it already exists
       existedLangs.removeWhere((element) => element.first == key);
       keys.add(key);
       for (final (String lang, int langIndex) in langIndexes) {
@@ -151,7 +146,7 @@ flutter:
     final Data? langCell = row[langIndex];
     final CellValue? langValue = langCell?.value;
     if (langValue is TextCellValue) {
-      langMap[lang]![key] = langValue.value.text ?? '';
+      langMap[lang]?[key] = langValue.value.text ?? '';
     }
   }
 }
