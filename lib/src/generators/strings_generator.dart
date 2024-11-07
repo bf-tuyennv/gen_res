@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:csv/csv.dart';
 import 'package:dart_style/dart_style.dart';
-import 'package:gen_res/src/generators/lang_generator.dart';
 import '../models/pubspec.dart';
 import '../utils/error.dart';
 import '../utils/logger.dart';
@@ -40,7 +39,7 @@ flutter:
         CsvToListConverter(csvSettingsDetector: csvSettingsDetector)
             .convert(translationContent, fieldDelimiter: ',');
 
-    lines.removeWhere((element) => element.contains(separator));
+    lines.removeWhere((element) => element.contains(pubspec.genRes.strings.separator) || element.first.isEmpty);
 
     final buffer = StringBuffer();
     buffer.writeln(header);

@@ -16,6 +16,11 @@ gen_res:
   strings:
     enabled: true
     path: assets/translations/langs.csv
+    xlsx_path: assets/translations/langs.xlsx
+    supported_langs:
+      - en
+      - vi
+    separator: '/// Extended'
     
   fonts:
     enabled: true

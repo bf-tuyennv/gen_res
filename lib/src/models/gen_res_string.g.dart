@@ -14,5 +14,10 @@ GenResString _$GenResStringFromJson(Map json) {
   return GenResString(
     enabled: json['enabled'] as bool,
     path: json['path'] as String,
+    xlsxPath: json['xlsx_path'] as String?,
+    supportedLangs: (json['supported_langs'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
+    separator: json['separator'] as String?,
   );
 }
