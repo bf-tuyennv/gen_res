@@ -67,12 +67,20 @@ gen_res:
 
   colors:
     enabled: true
+  
+  strings:
+    enabled: true
+    xlsx_path: assets/translations/language_source.xlsx
+    supported_langs:
+      - EN
+      - FR
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
     - assets/translations/langs.csv
+    - assets/translations/language_source.xlsx
   fonts:
     - family: Raleway
       fonts:

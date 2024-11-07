@@ -4,7 +4,13 @@ part 'gen_res_string.g.dart';
 
 @JsonSerializable(anyMap: true, explicitToJson: true, createToJson: false)
 class GenResString {
-  GenResString({required this.enabled, required this.path});
+  GenResString({
+    required this.enabled,
+    required this.path,
+    this.xlsxPath,
+    this.supportedLangs,
+    this.separator,
+  });
 
   @JsonKey(name: 'enabled', required: true)
   final bool enabled;
@@ -12,5 +18,19 @@ class GenResString {
   @JsonKey(name: 'path', required: true)
   final String path;
 
+  @JsonKey(name: 'xlsx_path', required: false)
+  final String? xlsxPath;
+
+  @JsonKey(name: 'supported_langs', required: false)
+  final List<String>? supportedLangs;
+
+  @JsonKey(name: 'separator', required: false)
+  final String? separator;
+
   factory GenResString.fromJson(Map json) => _$GenResStringFromJson(json);
+
+  @override
+  String toString() {
+    return 'GenResString{enabled: $enabled, path: $path, xlsxPath: $xlsxPath, supportedLangs: $supportedLangs, separator: $separator}';
+  }
 }

@@ -6,6 +6,7 @@ import 'package:path/path.dart';
 import 'colors_generator.dart';
 import 'drawable_generator.dart';
 import 'fonts_generator.dart';
+import 'lang_generator.dart';
 import 'resource_generator.dart';
 import 'strings_generator.dart';
 import '../utils/config.dart';
@@ -54,6 +55,13 @@ class Generator {
     }
 
     try {
+      final LangGenerator generator = LangGenerator(
+        pubspec: config.pubspec,
+      );
+      final generated = await generator.generate();
+      final lang = File(normalize(join(pubspecFile.parent.path, config.pubspec.genRes.strings.path)));
+      FileUtils.writeAsString(generated, file: lang);
+
       if (genRes.drawables.enabled) {
         final DrawableGenerator generator = DrawableGenerator(
           rootPath: pubspecFile.parent.path,
