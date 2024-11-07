@@ -73,6 +73,7 @@ flutter:
   assets:
     - assets/images/
     - assets/translations/langs.csv
+    - assets/translations/language_source.xlsx
   fonts:
     - family: Raleway
       fonts:
