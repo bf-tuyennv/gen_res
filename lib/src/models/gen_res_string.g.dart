@@ -19,5 +19,6 @@ GenResString _$GenResStringFromJson(Map json) {
         ?.map((e) => e as String)
         .toList(),
     separator: json['separator'] as String?,
+    sheetName: json['sheet_name'] as String?,
   );
 }

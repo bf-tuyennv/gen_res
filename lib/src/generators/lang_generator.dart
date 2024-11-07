@@ -95,11 +95,18 @@ flutter:
     final bytes = xlsxFile.readAsBytesSync();
     final excel = Excel.decodeBytes(bytes);
 
-    for (final table in excel.tables.keys) {
-      final rowsInSheet = excel.tables[table]?.rows;
+    if (pubspec.genRes.strings.sheetName != null) {
+      final rowsInSheet = excel.tables[pubspec.genRes.strings.sheetName]?.rows;
       final lines = _parseSheet(rowsInSheet: rowsInSheet);
       parsedLangs.addAll(lines);
+    } else {
+      for (final table in excel.tables.keys) {
+        final rowsInSheet = excel.tables[table]?.rows;
+        final lines = _parseSheet(rowsInSheet: rowsInSheet);
+        parsedLangs.addAll(lines);
+      }
     }
+
     return parsedLangs;
   }
 
@@ -136,6 +143,7 @@ flutter:
         continue;
       }
       final key = keyValue.value.text ?? '';
+      if (keys.contains(key)) continue;
       existedLangs.removeWhere((element) => element.first == key);
       keys.add(key);
       for (final (lang, langIndex) in langIndexes) {
