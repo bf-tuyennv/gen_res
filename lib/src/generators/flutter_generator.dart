@@ -55,12 +55,15 @@ class Generator {
     }
 
     try {
-      final LangGenerator generator = LangGenerator(
-        pubspec: config.pubspec,
-      );
-      final generated = await generator.generate();
-      final lang = File(normalize(join(pubspecFile.parent.path, config.pubspec.genRes.strings.path)));
-      FileUtils.writeAsString(generated, file: lang);
+      if (genRes.strings.hasExtended ?? false) {
+        final LangGenerator generator = LangGenerator(
+          pubspec: config.pubspec,
+        );
+        final generated = await generator.generate();
+        final lang = File(normalize(
+            join(pubspecFile.parent.path, config.pubspec.genRes.strings.path)));
+        FileUtils.writeAsString(generated, file: lang);
+      }
 
       if (genRes.drawables.enabled) {
         final DrawableGenerator generator = DrawableGenerator(

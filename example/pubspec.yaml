@@ -70,6 +70,7 @@ gen_res:
   
   strings:
     enabled: true
+    has_extended: false
     xlsx_path: assets/translations/language_source.xlsx
     supported_langs:
       - EN
