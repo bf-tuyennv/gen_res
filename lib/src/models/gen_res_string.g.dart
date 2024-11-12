@@ -20,5 +20,6 @@ GenResString _$GenResStringFromJson(Map json) {
         .toList(),
     separator: json['separator'] as String?,
     sheetName: json['sheet_name'] as String?,
+    hasExtended: json['has_extended'] as bool?,
   );
 }

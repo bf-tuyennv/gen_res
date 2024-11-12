@@ -32,7 +32,7 @@ class GenResString {
   @JsonKey(name: 'sheet_name', required: false)
   final String? sheetName;
 
-  @JsonKey(name: 'has_extended', defaultValue: false, required: false)
+  @JsonKey(name: 'has_extended', required: false)
   final bool? hasExtended;
 
   factory GenResString.fromJson(Map json) => _$GenResStringFromJson(json);
