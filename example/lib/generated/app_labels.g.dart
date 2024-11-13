@@ -30,7 +30,7 @@ class AppLabels {
   ///[Password, Password]
   String get TEXT_0004 => 'TEXT_0004'.tr();
 
-  ///[Password, Mot de passe ]
+  ///[Password, Mot de passe]
   String get TEXT_0005 => 'TEXT_0005'.tr();
 
   ///[Remember me, Se souvenir de moi]
@@ -48,7 +48,7 @@ class AppLabels {
   ///[Sign up, S'inscrire]
   String get TEXT_0010 => 'TEXT_0010'.tr();
 
-  ///[Administrator, Administrateur ]
+  ///[Administrator, Administrateur]
   String get TEXT_0011 => 'TEXT_0011'.tr();
 
   ///[Dashboard, Dashboard]
@@ -174,7 +174,7 @@ class AppLabels {
   ///[Air conditioner, Climatiseur]
   String get TEXT_0052 => 'TEXT_0052'.tr();
 
-  ///[Heater, Chauffage ]
+  ///[Heater, Chauffage]
   String get TEXT_0053 => 'TEXT_0053'.tr();
 
   ///[Fan, Ventilateur]
@@ -210,7 +210,7 @@ class AppLabels {
   ///[Action, Action]
   String get TEXT_0064 => 'TEXT_0064'.tr();
 
-  ///[Filtered by, Filtré par ]
+  ///[Filtered by, Filtré par]
   String get TEXT_0065 => 'TEXT_0065'.tr();
 
   ///[Activity history, Historique d'activités]
@@ -315,7 +315,7 @@ class AppLabels {
   ///[X_XX of XXX rows, X_XX sur XXX lignes]
   String get TEXT_0099 => 'TEXT_0099'.tr();
 
-  ///[Page number , X sur X]
+  ///[Page number, X sur X]
   String get TEXT_0100 => 'TEXT_0100'.tr();
 
   ///[Return, retour]
@@ -672,7 +672,7 @@ class AppLabels {
   ///[Comment, Commentaire]
   String get TEXT_0218 => 'TEXT_0218'.tr();
 
-  ///[History, Historique ]
+  ///[History, Historique]
   String get TEXT_0219 => 'TEXT_0219'.tr();
 
   ///[Save, Enregistrer]
@@ -1005,7 +1005,7 @@ class AppLabels {
   ///[Search, Rechercher]
   String get TEXT_0329 => 'TEXT_0329'.tr();
 
-  ///[None, Aucun ]
+  ///[None, Aucun]
   String get TEXT_0330 => 'TEXT_0330'.tr();
 
   ///[Select all, Tout sélectionner]
@@ -1014,7 +1014,7 @@ class AppLabels {
   ///[Author, Créateur]
   String get TEXT_0332 => 'TEXT_0332'.tr();
 
-  ///[All inventories, Tous les inventaires ]
+  ///[All inventories, Tous les inventaires]
   String get TEXT_0333 => 'TEXT_0333'.tr();
 
   ///[Inventories, Inventaires]

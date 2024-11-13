@@ -170,7 +170,7 @@ flutter:
     final langCell = row[langIndex];
     final langValue = langCell?.value;
     if (langValue is TextCellValue) {
-      langMap[lang]?[key] = langValue.value.text ?? '';
+      langMap[lang]?[key] = (langValue.value.text ?? '').trim();
     }
   }
 }

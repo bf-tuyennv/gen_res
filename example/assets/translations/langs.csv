@@ -6,13 +6,13 @@ TEXT_0001,Login,Connexion
 TEXT_0002,Username,Identifiant
 TEXT_0003,Work email,Email professionnel
 TEXT_0004,Password,Password
-TEXT_0005,Password,Mot de passe 
+TEXT_0005,Password,Mot de passe
 TEXT_0006,Remember me,Se souvenir de moi
 TEXT_0007,Forgot password,Mot de passe oublié
 TEXT_0008,Sign in,Se connecter
 TEXT_0009,No account yet?,Pas encore de compte?
 TEXT_0010,Sign up,S'inscrire
-TEXT_0011,Administrator,Administrateur 
+TEXT_0011,Administrator,Administrateur
 TEXT_0012,Dashboard,Dashboard
 TEXT_0013,Favorites:,Favoris :
 TEXT_0014,Real estate - Work & Contracts,Parc immobilier - Travaux & Contrats
@@ -54,7 +54,7 @@ TEXT_0049,Vacuum cleaner,Aspirateur
 TEXT_0050,Cleaning cart,Chariot ménager
 TEXT_0051,Washer,Laveuse
 TEXT_0052,Air conditioner,Climatiseur
-TEXT_0053,Heater,Chauffage 
+TEXT_0053,Heater,Chauffage
 TEXT_0054,Fan,Ventilateur
 TEXT_0055,Kettle,Bouilloire
 TEXT_0056,Oven,Four
@@ -66,7 +66,7 @@ TEXT_0061,Depreciation,Dépréciation
 TEXT_0062,Purchase date,Date achat
 TEXT_0063,Condition,Etat
 TEXT_0064,Action,Action
-TEXT_0065,Filtered by,Filtré par 
+TEXT_0065,Filtered by,Filtré par
 TEXT_0066,Activity history,Historique d'activités
 TEXT_0067,Action,Action
 TEXT_0068,Duplicate,Dupliquer
@@ -101,7 +101,7 @@ TEXT_0096,Status,Statut
 TEXT_0097,Action,Actions
 TEXT_0098,Rows per page,Lignes par page
 TEXT_0099,X_XX of XXX rows,X_XX sur XXX lignes
-TEXT_0100,Page number ,X sur X
+TEXT_0100,Page number,X sur X
 TEXT_0101,Return,retour
 TEXT_0102,Creation,Création
 TEXT_0103,User,Utilisateur
@@ -220,7 +220,7 @@ TEXT_0215,Model,Modèle
 TEXT_0216,Select/Create a model,Choisir/Créer un modèle
 TEXT_0217,Additional information,Informations complémentaires
 TEXT_0218,Comment,Commentaire
-TEXT_0219,History,Historique 
+TEXT_0219,History,Historique
 TEXT_0220,Save,Enregistrer
 TEXT_0221,Screen,Écran
 TEXT_0222,PC,PC
@@ -331,10 +331,10 @@ TEXT_0326,Description,Description
 TEXT_0327,Detail,Détail
 TEXT_0328,Transfer,Transférer
 TEXT_0329,Search,Rechercher
-TEXT_0330,None,Aucun 
+TEXT_0330,None,Aucun
 TEXT_0331,Select all,Tout sélectionner
 TEXT_0332,Author,Créateur
-TEXT_0333,All inventories,Tous les inventaires 
+TEXT_0333,All inventories,Tous les inventaires
 TEXT_0334,Inventories,Inventaires
 TEXT_0335,Open inventories,Inventaires ouverts
 TEXT_0336,In progress,En cours
