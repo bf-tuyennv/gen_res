@@ -13,27 +13,27 @@ class LangGenerator {
       FirstOccurrenceSettingsDetector(eols: ['\r\n', '\n']);
 
   final Pubspec pubspec;
+  final Map<String, String> result = {};
   final List<String> langs = [];
-  final Map<String, Map<String, String>> langMap = {};
   final List<String> keys = [];
-  final StringBuffer buffer = StringBuffer();
-  final List<List<String>> existedLangs = [];
+  final Map<String, Map<String, String>> langMap = {};
 
   Future<String> generate() async {
+    final buffer = StringBuffer();
     _validateSettings();
     _loadSupportedLangs();
     _checkAssetsPath();
 
     final translationContent = await _readTranslationFile();
-    _parseExistedLangs(translationContent);
+    final lines = _parseCsvContent(translationContent);
+    _parseExistedLangs(lines);
+    buffer.writeln(lines.first.join(','));
 
-    final extendedLangs = _parseFromExtendedFile();
-    final existedWords = _parseFromExistedFile();
+    _parseFromExtendedFile();
 
-    buffer
-      ..writeln(existedWords.join('\n'))
-      ..writeln(pubspec.genRes.strings.separator ?? '')
-      ..writeln(extendedLangs.join('\n'));
+    for (final line in result.values) {
+      buffer.writeln(line);
+    }
 
     return buffer.toString();
   }
@@ -73,46 +73,39 @@ flutter:
     return translationContent;
   }
 
-  void _parseExistedLangs(String translationContent) {
-    final rawList =
-        translationContent.split(pubspec.genRes.strings.separator ?? '');
-    existedLangs.addAll(
-        CsvToListConverter(csvSettingsDetector: csvSettingsDetector)
-            .convert(rawList[0], fieldDelimiter: ','));
+  List<List<String>> _parseCsvContent(String content) {
+    return CsvToListConverter(csvSettingsDetector: csvSettingsDetector)
+        .convert(content, fieldDelimiter: ',');
   }
 
-  List<String> _parseFromExistedFile() {
-    return existedLangs
-        .map(_convertListToLine)
-        .where((parsedLine) => parsedLine != null)
-        .cast<String>()
-        .toList();
+  void _parseExistedLangs(List<List<String>> lines) {
+    for (final line in lines.skip(1)) {
+      final key = line.firstOrNull;
+      final value = _convertListToLine(line);
+      if ((key?.isEmpty ?? true) || (value?.isEmpty ?? true)) continue;
+      result[key ?? ''] = value ?? '';
+    }
   }
 
-  List<String> _parseFromExtendedFile() {
-    final parsedLangs = <String>[];
+  void _parseFromExtendedFile() {
     final xlsxFile = File(pubspec.genRes.strings.xlsxPath ?? '');
     final bytes = xlsxFile.readAsBytesSync();
     final excel = Excel.decodeBytes(bytes);
 
-    if (pubspec.genRes.strings.sheetName != null) {
-      final rowsInSheet = excel.tables[pubspec.genRes.strings.sheetName]?.rows;
-      final lines = _parseSheet(rowsInSheet: rowsInSheet);
-      parsedLangs.addAll(lines);
-    } else {
-      for (final table in excel.tables.keys) {
-        final rowsInSheet = excel.tables[table]?.rows;
-        final lines = _parseSheet(rowsInSheet: rowsInSheet);
-        parsedLangs.addAll(lines);
+    final sheetNames = pubspec.genRes.strings.sheetName != null
+        ? [pubspec.genRes.strings.sheetName!]
+        : excel.tables.keys.toList();
+
+    for (final sheetName in sheetNames) {
+      final rowsInSheet = excel.tables[sheetName]?.rows;
+      if (rowsInSheet != null) {
+        _parseSheet(rowsInSheet);
       }
     }
-
-    return parsedLangs;
   }
 
-  List<String> _parseSheet({required List<List<Data?>>? rowsInSheet}) {
-    final parsedLangs = <String>[];
-    _parseLanguage(rowsInSheet ?? []);
+  void _parseSheet(List<List<Data?>> rowsInSheet) {
+    _parseLanguage(rowsInSheet);
     for (final key in keys) {
       final line = [key];
       for (final lang in langs) {
@@ -121,10 +114,9 @@ flutter:
       }
       final parsedLine = _convertListToLine(line);
       if (parsedLine != null) {
-        parsedLangs.add(parsedLine);
+        result[key] = parsedLine;
       }
     }
-    return parsedLangs;
   }
 
   String? _convertListToLine(List<String> line) {
@@ -144,10 +136,9 @@ flutter:
       }
       final key = keyValue.value.text ?? '';
       if (keys.contains(key)) continue;
-      existedLangs.removeWhere((element) => element.first == key);
       keys.add(key);
       for (final (lang, langIndex) in langIndexes) {
-        _parseLanguageFromRow(
+        _parseSingleLanguageFromRow(
             row: row, key: key, lang: lang, langIndex: langIndex);
       }
     }
@@ -156,7 +147,7 @@ flutter:
   List<(String, int)> _getLangIndexes(List<List<Data?>> rows) {
     return langs
         .map((lang) {
-          final langIndex = rows.first.indexWhere((cell) {
+          final langIndex = rows.firstOrNull?.indexWhere((cell) {
             final value = cell?.value;
             return value is TextCellValue && value.value.text == lang;
           });
@@ -170,7 +161,7 @@ flutter:
         .toList();
   }
 
-  void _parseLanguageFromRow({
+  void _parseSingleLanguageFromRow({
     required List<Data?> row,
     required String key,
     required String lang,

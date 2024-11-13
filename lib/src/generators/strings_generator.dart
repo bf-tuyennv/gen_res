@@ -39,8 +39,6 @@ flutter:
         CsvToListConverter(csvSettingsDetector: csvSettingsDetector)
             .convert(translationContent, fieldDelimiter: ',');
 
-    lines.removeWhere((element) => element.contains(pubspec.genRes.strings.separator) || element.first.isEmpty);
-
     final buffer = StringBuffer();
     buffer.writeln(header);
     buffer.writeln(ignoreAnalysis);

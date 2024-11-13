@@ -9,9 +9,7 @@ class GenResString {
     required this.path,
     this.xlsxPath,
     this.supportedLangs,
-    this.separator,
     this.sheetName,
-    this.hasExtended,
   });
 
   @JsonKey(name: 'enabled', required: true)
@@ -26,19 +24,13 @@ class GenResString {
   @JsonKey(name: 'supported_langs', required: false)
   final List<String>? supportedLangs;
 
-  @JsonKey(name: 'separator', required: false)
-  final String? separator;
-
   @JsonKey(name: 'sheet_name', required: false)
   final String? sheetName;
-
-  @JsonKey(name: 'has_extended', required: false)
-  final bool? hasExtended;
 
   factory GenResString.fromJson(Map json) => _$GenResStringFromJson(json);
 
   @override
   String toString() {
-    return 'GenResString{enabled: $enabled, path: $path, xlsxPath: $xlsxPath, supportedLangs: $supportedLangs, separator: $separator, sheetName: $sheetName}';
+    return 'GenResString{enabled: $enabled, path: $path, xlsxPath: $xlsxPath, supportedLangs: $supportedLangs, sheetName: $sheetName}';
   }
 }

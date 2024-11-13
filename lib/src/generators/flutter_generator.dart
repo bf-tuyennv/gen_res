@@ -55,7 +55,7 @@ class Generator {
     }
 
     try {
-      if (genRes.strings.hasExtended ?? false) {
+      if (genRes.strings.xlsxPath?.isNotEmpty ?? false) {
         final LangGenerator generator = LangGenerator(
           pubspec: config.pubspec,
         );

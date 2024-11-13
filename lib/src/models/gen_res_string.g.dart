@@ -18,8 +18,6 @@ GenResString _$GenResStringFromJson(Map json) {
     supportedLangs: (json['supported_langs'] as List<dynamic>?)
         ?.map((e) => e as String)
         .toList(),
-    separator: json['separator'] as String?,
     sheetName: json['sheet_name'] as String?,
-    hasExtended: json['has_extended'] as bool?,
   );
 }

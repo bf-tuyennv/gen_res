@@ -2,3 +2,370 @@ str,en,vi,
 home_page_title,Flutter Demo Home Page,Màn hình chính,
 count_title,You have pushed the button this many times:,Bạn đã ấn nút nhấn này nhiều lần:,
 increment,Increment,"TAGNE,AWHYF,SDJKAS  ",
+TEXT_0001,Login,Connexion
+TEXT_0002,Username,Identifiant
+TEXT_0003,Work email,Email professionnel
+TEXT_0004,Password,Password
+TEXT_0005,Password,Mot de passe 
+TEXT_0006,Remember me,Se souvenir de moi
+TEXT_0007,Forgot password,Mot de passe oublié
+TEXT_0008,Sign in,Se connecter
+TEXT_0009,No account yet?,Pas encore de compte?
+TEXT_0010,Sign up,S'inscrire
+TEXT_0011,Administrator,Administrateur 
+TEXT_0012,Dashboard,Dashboard
+TEXT_0013,Favorites:,Favoris :
+TEXT_0014,Real estate - Work & Contracts,Parc immobilier - Travaux & Contrats
+TEXT_0015,Asset Park,Parc Actifs
+TEXT_0016,Asset request,Demande de biens
+TEXT_0017,User management,Gestion des utilisateurs
+TEXT_0018,Reports,Rapports
+TEXT_0019,Settings,Paramètres
+TEXT_0020,My account,Mon compte
+TEXT_0021,Logout,Déconnexion
+TEXT_0022,Minimize,Réduire
+TEXT_0023,Categories,Catégories
+TEXT_0024,My requests,Mes demandes
+TEXT_0025,Real estate park,Parc immobilier
+TEXT_0026,Contracts,Contrats
+TEXT_0027,Interventions,Interventions
+TEXT_0028,Asset list,Liste des actifs
+TEXT_0029,Depreciations,Dépreciations
+TEXT_0030,Real estate park report,Rapport parc immobilier
+TEXT_0031,Asset report,Rapport d'actifs
+TEXT_0032,Request report,Rapport des demandes
+TEXT_0033,General settings,Paramètres généraux
+TEXT_0034,Section settings,Paramètres de rubriques
+TEXT_0035,Request settings,Paramètres des demandes
+TEXT_0036,Informational,Informationnel
+TEXT_0037,Furniture,Mobilier
+TEXT_0038,Home appliances,Electroménager
+TEXT_0039,Tools,Outillage
+TEXT_0040,Storage & Handling,Stockage & Manutention
+TEXT_0041,Type,Genre
+TEXT_0042,Fridge,Frigo
+TEXT_0043,Freezer,Congélateur
+TEXT_0044,Microwave,Micro-onde
+TEXT_0045,Water dispenser,Fontaine à eau
+TEXT_0046,Coffee machine,Machine à café
+TEXT_0047,Washing machine,Lave linge
+TEXT_0048,Dryer,Sèche linge
+TEXT_0049,Vacuum cleaner,Aspirateur
+TEXT_0050,Cleaning cart,Chariot ménager
+TEXT_0051,Washer,Laveuse
+TEXT_0052,Air conditioner,Climatiseur
+TEXT_0053,Heater,Chauffage 
+TEXT_0054,Fan,Ventilateur
+TEXT_0055,Kettle,Bouilloire
+TEXT_0056,Oven,Four
+TEXT_0057,Company,Entreprise
+TEXT_0058,RFID No.,N°RFID
+TEXT_0059,Reference,Référence
+TEXT_0060,Quantity,Qté
+TEXT_0061,Depreciation,Dépréciation
+TEXT_0062,Purchase date,Date achat
+TEXT_0063,Condition,Etat
+TEXT_0064,Action,Action
+TEXT_0065,Filtered by,Filtré par 
+TEXT_0066,Activity history,Historique d'activités
+TEXT_0067,Action,Action
+TEXT_0068,Duplicate,Dupliquer
+TEXT_0069,Transfer,Transférer
+TEXT_0070,Edit,Modifier
+TEXT_0071,Delete,Supprimer
+TEXT_0072,Back,retour
+TEXT_0073,Creation,Création
+TEXT_0074,Section,Rubrique
+TEXT_0075,Module,Module
+TEXT_0076,Active,Actif
+TEXT_0077,Type,Type
+TEXT_0078,Brand,Référence
+TEXT_0079,Product reference,Référence produit
+TEXT_0080,Quantity,Quantité
+TEXT_0081,Model,Modèle
+TEXT_0082,Manager,Gestionnaire
+TEXT_0083,User,Utilisateur
+TEXT_0084,Notifications,Notifications
+TEXT_0085,Loading,Chargement en cours
+TEXT_0086,Forgot password,Mot de passe oublié
+TEXT_0087,Reset Password,Réinitialiser le mot de passe
+TEXT_0088,Password error,Erreur de mot de passe
+TEXT_0089,Service,Service
+TEXT_0090,Brand,Marque
+TEXT_0091,Add,Ajouter
+TEXT_0092,User,Utilisateur
+TEXT_0093,Role,Rôle
+TEXT_0094,Company,Société
+TEXT_0095,Site,Site
+TEXT_0096,Status,Statut
+TEXT_0097,Action,Actions
+TEXT_0098,Rows per page,Lignes par page
+TEXT_0099,X_XX of XXX rows,X_XX sur XXX lignes
+TEXT_0100,Page number ,X sur X
+TEXT_0101,Return,retour
+TEXT_0102,Creation,Création
+TEXT_0103,User,Utilisateur
+TEXT_0104,Section,Rubrique
+TEXT_0105,Module,Module
+TEXT_0106,Category,Catégorie
+TEXT_0107,Active,Actif
+TEXT_0108,Last Name,Nom
+TEXT_0109,First Name,Prénom
+TEXT_0110,Email,Email
+TEXT_0111,Company,Société
+TEXT_0112,Site,Site
+TEXT_0113,Role Type,Rôle type
+TEXT_0114,Administrator;Manager;User,Administrateur;Gestionnaire;Utilisateur
+TEXT_0115,Features,Fonctionalités
+TEXT_0116,Price Edition,Edition tarifaire
+TEXT_0117,Import/Export,Import/ export
+TEXT_0118,Asset Deletion,Supression d'actifs
+TEXT_0119,Access,Accès
+TEXT_0120,Real Estate Portfolio - Works & Contracts,Parc immobilier - Travaux & Contrats
+TEXT_0121,Real Estate Portfolio,Parc immobilier
+TEXT_0122,Contracts,Contrats
+TEXT_0123,Interventions,Interventions
+TEXT_0124,Asset Portfolio,Parc Actifs
+TEXT_0125,Categories,Catégories
+TEXT_0126,Asset List,Liste des actifs
+TEXT_0127,Depreciation,Dépréciation
+TEXT_0128,Contracts,Contrats
+TEXT_0129,Asset Requests,Demande de biens
+TEXT_0130,New Request,Nouvelle demande
+TEXT_0131,My Requests,Mes demandes
+TEXT_0132,Request Processing,Traitement des demandes
+TEXT_0133,User Management,Gestion des utilisateurs
+TEXT_0134,Users,Utilisateurs
+TEXT_0135,Services,Services
+TEXT_0136,Reports,Rapports
+TEXT_0137,Real Estate Portfolio Report,Rapport parc immobilier
+TEXT_0138,Asset Report,Rapport d'actifs
+TEXT_0139,Request Report,Rapport des demandes
+TEXT_0140,Settings,Paramètres
+TEXT_0141,General Settings,Paramètres généraux
+TEXT_0142,Settings,Paramètres
+TEXT_0143,Request Report,Rapport des demandes
+TEXT_0144,Save,Enregistrer
+TEXT_0145,Actions,Actions
+TEXT_0146,Duplicate,Dupliquer
+TEXT_0147,Transfer,Transférer
+TEXT_0148,Edit,Modifier
+TEXT_0149,Delete,Supprimer
+TEXT_0150,Reason for deletion,Motif de suppression
+TEXT_0151,Selection,Sélection
+TEXT_0152,Linear,Linéaire
+TEXT_0153,Progressive,Progressive
+TEXT_0154,This action is irreversible,L'action est irréversible
+TEXT_0155,Cancel,Annuler
+TEXT_0156,Asset List,Liste des actifs
+TEXT_0157,Category,Catégorie
+TEXT_0158,Type,Genre
+TEXT_0159,Company,Société
+TEXT_0160,Real Estate Portfolio,Parc immobilier
+TEXT_0161,Condition,Etat
+TEXT_0162,Transalliance,Transalliance
+TEXT_0163,Weblogistics,Weblogistics
+TEXT_0164,AZPL,AZPL
+TEXT_0165,Colvemat,Colvemat
+TEXT_0166,Bfast System,Bfast System
+TEXT_0167,Available Assets,Actifs disponibles
+TEXT_0168,Company,Entreprise
+TEXT_0169,Service,Service
+TEXT_0170,Type,Genre
+TEXT_0171,Category,Catégorie
+TEXT_0172,Brand,Marque
+TEXT_0173,Reference,Référence
+TEXT_0174,RFID Number,N°RFID
+TEXT_0175,Depreciation,Dépréciation
+TEXT_0176,Purchase date,Date achat
+TEXT_0177,Action,Action
+TEXT_0178,Depreciation,Dépréciation
+TEXT_0179,New model,Nouveau modèle
+TEXT_0180,Create,Créer
+TEXT_0181,Linear depreciations,Dépréciations linéaires
+TEXT_0182,Declining depreciations,Dépréciations dégressives
+TEXT_0183,Type,Type
+TEXT_0184,Name,Nom
+TEXT_0185,Period Duration,Durée de période
+TEXT_0186,Value Table,Tableau de valeurs
+TEXT_0187,Comment,Commentaire
+TEXT_0188,Free Text Field,Champ de saisie libre
+TEXT_0189,Edit,Modifier
+TEXT_0190,Creation of model,Création de modèle
+TEXT_0191,Depreciation type,Type de dépréciation
+TEXT_0192,Name,Nom
+TEXT_0193,Period Duration,Durée de période
+TEXT_0194,Annual  rate,Taux par an
+TEXT_0195,Analytical,Analytique
+TEXT_0196,Comment,Commentaire
+TEXT_0197,Save,Enregistrer
+TEXT_0198,Company,Société
+TEXT_0199,Site,Site
+TEXT_0200,Type,Genre
+TEXT_0201,Category,Type
+TEXT_0202,Supplier,Fournisseur
+TEXT_0203,Suppler Reference,Référence fournisseur
+TEXT_0204,Product Reference,Référence produit
+TEXT_0205,Brand,Marque
+TEXT_0206,Condition,État
+TEXT_0207,Purchase date,Date achat
+TEXT_0208,purchase Price,Prix d'achat
+TEXT_0209,Billable,Facturable
+TEXT_0210,Billing Method,Mode de facturation
+TEXT_0211,Billable amount,Montant facturable
+TEXT_0212,Billing percentage,Pourcentage à facturer
+TEXT_0213,Billing  amount,Montant à facturer
+TEXT_0214,Depreciation,Dépréciation
+TEXT_0215,Model,Modèle
+TEXT_0216,Select/Create a model,Choisir/Créer un modèle
+TEXT_0217,Additional information,Informations complémentaires
+TEXT_0218,Comment,Commentaire
+TEXT_0219,History,Historique 
+TEXT_0220,Save,Enregistrer
+TEXT_0221,Screen,Écran
+TEXT_0222,PC,PC
+TEXT_0223,Laptop,Portable
+TEXT_0224,GPS,GPS
+TEXT_0225,Printer,Imprimante
+TEXT_0226,Digital Camera,Appareil photo numérique
+TEXT_0227,Voice Terminal,Terminal Vocal
+TEXT_0228,NAS (Network Attached Storage),NAS
+TEXT_0229,Docking Station,Station d'accueil
+TEXT_0230,Alarm,Alarme
+TEXT_0231,Phone,Téléphone
+TEXT_0232,WIFI Antenna,Antenne WIFI
+TEXT_0233,Switch,Switch
+TEXT_0234,Headphones/Speaker,Casque Audio/Haut parleur
+TEXT_0235,Simulator,Simulateur
+TEXT_0236,Label Printer,Etiqueteuse
+TEXT_0237,Media Player,Lecteur Multimédia
+TEXT_0238,Microphone,Micro
+TEXT_0239,Projector,Projecteur
+TEXT_0240,Remote Control,Télécommande
+TEXT_0241,Webcam,Webcam
+TEXT_0242,POS (Point of Sale Terminal),TPE
+TEXT_0243,Mouse,Souris
+TEXT_0244,Cabling,Câblage
+TEXT_0245,Lone Worker Protection Device,PTI
+TEXT_0246,PDA (Personal Digital Assistant),PDA
+TEXT_0247,Telematics,Télématique
+TEXT_0248,Tablet,Tablette Numérique
+TEXT_0249,SIM Card,Carte SIM
+TEXT_0250,Mobile Phone,Téléphone portable
+TEXT_0251,Meeting & Community,Réunion & Collectivité
+TEXT_0252,Workshop,Atelier
+TEXT_0253,Storage,Rangement
+TEXT_0254,Seating,Assise
+TEXT_0255,Accessories,Accessoires
+TEXT_0256,Power Tools,Electroportatif
+TEXT_0257,Hand Tools,Outillage à main
+TEXT_0258,Machine,Machine
+TEXT_0259,Lifting Equipment,Levage
+TEXT_0260,Pneumatic,Pneumatique
+TEXT_0261,Material Handling,Manutention
+TEXT_0262,Storage,Stockage
+TEXT_0263,Sale of the asset,Vente de l'actif
+TEXT_0264,Asset disposal,Mise au rebus
+TEXT_0265,Loss or destruction,Perte ou destruction
+TEXT_0266,Full depreciation,Amortissement total
+TEXT_0267,Donation or transfer,Don ou Cession
+TEXT_0268,Exchange,Échange
+TEXT_0269,Accounting error,Erreur comptable
+TEXT_0270,Accounting,Comptabilité
+TEXT_0271,Logistics,Logistique
+TEXT_0272,Administrative,Administratif
+TEXT_0273,List of contracts,Liste de contrats
+TEXT_0274,Model 1,Modèle 1
+TEXT_0275,Model 2,Modèle 2
+TEXT_0276,Model 3,Modèle 3
+TEXT_0277,Lin 2 years - 2.50%,Lin 2 ans - 2.50%
+TEXT_0278,Lin 4 years - 1.25%,Lin 4 ans - 1.25%
+TEXT_0279,Lin 2 years - 2.50%,Lin 2 ans - 2.50%
+TEXT_0280,Lin 3 years - 1.50%,Lin 3 ans - 1.50%
+TEXT_0281,Deg 2 years - 2.50%,Dég 2 ans - 2.50%
+TEXT_0282,Deg 4 years - 1.25%,Dég 4 ans - 1.25%
+TEXT_0283,Deg 2 years - 2.50%,Dég 2 ans - 2.50%
+TEXT_0284,Deg 3 years - 1.50%,Dég 3 ans - 1.50%
+TEXT_0285,Building,Etablissement
+TEXT_0286,Department,Service
+TEXT_0287,Room,Salle
+TEXT_0288,Staff (Optional),Personnel (Optionnel)
+TEXT_0289,Break Room 1,Salle de repos 1
+TEXT_0290,Office 2,Bureau 2
+TEXT_0291,Workshop Office,Bureau Atelier
+TEXT_0292,Accounting Office,Bureau comptabilité
+TEXT_0293,Administrative Staff,Personnel administratif
+TEXT_0294,Technical Staff,Personnel Technique
+TEXT_0295,Logistics Staff,Personnel Logistique
+TEXT_0296,Driving and Operations Staff,Personnel de conduite et d'exploitation
+TEXT_0297,Security Staff,Personnel de sécurité
+TEXT_0298,Commercial Staff,Personnel Commercial
+TEXT_0299,Description,Description
+TEXT_0300,Details,Détails
+TEXT_0301,Unassigned,Non affecté
+TEXT_0302,Transfer to,Transférer vers
+TEXT_0303,Bijot,Bijot
+TEXT_0304,Tinqueux,Tinqueux
+TEXT_0305,Eckbolsheim,Eckbolsheim
+TEXT_0306,Building,Etablissement
+TEXT_0307,Dudelange,Dudelange
+TEXT_0308,Department,Service
+TEXT_0309,Optional,Optionnel
+TEXT_0310,Purchasing,Achat
+TEXT_0311,Room,Salle
+TEXT_0312,Open space,Open space
+TEXT_0313,Break room,Salle de pause
+TEXT_0314,A1,A1
+TEXT_0315,Staff,Personnel
+TEXT_0316,Supplier,Fournisseur
+TEXT_0317,Hub-One,Hub-One
+TEXT_0318,Fournial,Fournial
+TEXT_0319,Boulanger,Boulanger
+TEXT_0320,LG,LG
+TEXT_0321,Condition,Etat
+TEXT_0322,New,Neuf
+TEXT_0323,Used,Occasion
+TEXT_0324,Out of order,Hors d'usage
+TEXT_0325,ID Number,N°d'identification
+TEXT_0326,Description,Description
+TEXT_0327,Detail,Détail
+TEXT_0328,Transfer,Transférer
+TEXT_0329,Search,Rechercher
+TEXT_0330,None,Aucun 
+TEXT_0331,Select all,Tout sélectionner
+TEXT_0332,Author,Créateur
+TEXT_0333,All inventories,Tous les inventaires 
+TEXT_0334,Inventories,Inventaires
+TEXT_0335,Open inventories,Inventaires ouverts
+TEXT_0336,In progress,En cours
+TEXT_0337,To validate,A valider
+TEXT_0338,Inventory name,Nom de l'inventaire
+TEXT_0339,Creation date,Date de création
+TEXT_0340,Created,Crée
+TEXT_0341,Closed,Clôturé
+TEXT_0342,Details,Détails
+TEXT_0343,Open,Ouvert
+TEXT_0344,List,Liste
+TEXT_0345,Report,Compte rendu
+TEXT_0346,Scanned,Scanné
+TEXT_0347,Not present,Non présent
+TEXT_0348,Scanned off-list,Scanné hors liste
+TEXT_0349,Building 1,Etablissement 1
+TEXT_0350,Building 2,Etablissement 2
+TEXT_0351,Building 3,Etablissement 3
+TEXT_0352,Transfer,Transférer
+TEXT_0353,Removed,Sorti
+TEXT_0354,Added,Crée
+TEXT_0355,Validate inventory,Valider l'inventaire
+TEXT_0356,Create asset,Création d'actif
+TEXT_0357,Manual (one asset at a time),Manuelle (un actif à la fois)
+TEXT_0358,By inventory (multiple assets),Par inventaire (plusieurs actifs)
+TEXT_0359,Inventory (existing assets within the perimeter),Inventaire (actifs déjà existants sur le périmètre)
+TEXT_0360,Search (specific existing assets),Recherche (actif spécifique existant)
+TEXT_0361,Name,Nom
+TEXT_0362,First name,Prénom
+TEXT_0363,Reset password,Réinitialiser le mot de passe
+TEXT_0364,Password reset link sent,Lien de réinitialisation envoyé
+TEXT_0365,Warnings,Attention
+TEXT_0366,An inventory is already in progress on,Un inventaire est déjà en cours
+TEXT_0367,To validate,à valider
