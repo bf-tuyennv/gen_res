@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:dart_style/dart_style.dart';
 import 'package:path/path.dart';
+import 'package:pub_semver/pub_semver.dart';
+
+import 'dart:io' as io show Platform;
 
 import 'colors_generator.dart';
 import 'drawable_generator.dart';
@@ -46,7 +49,16 @@ class Generator {
     final genRes = config.pubspec.genRes;
     final output = config.pubspec.genRes.output;
     final lineLength = config.pubspec.genRes.lineLength;
-    final formatter = DartFormatter(pageWidth: lineLength, lineEnding: '\n');
+    final version = io.Platform.version.split(' ').first;
+    final VersionConstraint sdkConstraint = VersionConstraint.parse('^$version');
+    final useShort = sdkConstraint.allowsAny(VersionConstraint.parse('<3.7.0'));
+    final formatter = DartFormatter(
+      languageVersion: useShort
+          ? DartFormatter.latestShortStyleLanguageVersion
+          : DartFormatter.latestLanguageVersion,
+      pageWidth: lineLength,
+      lineEnding: '\n',
+    );
 
     final absoluteOutput = Directory(normalize(join(pubspecFile.parent.path, output)));
     if (!absoluteOutput.existsSync()) {
@@ -61,7 +73,8 @@ class Generator {
           formatter: formatter,
         );
         final generated = generator.generate();
-        final assets = File(normalize(join(pubspecFile.parent.path, output, config.pubspec.genRes.drawables.output ?? drawablesName)));
+        final assets = File(normalize(join(pubspecFile.parent.path, output,
+            config.pubspec.genRes.drawables.output ?? drawablesName)));
         FileUtils.writeAsString(generated, file: assets);
         stdout.writeln('Generated: ${assets.absolute.path}');
       }
@@ -73,7 +86,8 @@ class Generator {
           colors: genRes.colors,
         );
         final generated = await generator.generate();
-        final colors = File(normalize(join(pubspecFile.parent.path, output, colorsName)));
+        final colors =
+            File(normalize(join(pubspecFile.parent.path, output, colorsName)));
         FileUtils.writeAsString(generated, file: colors);
         stdout.writeln('Generated: ${colors.absolute.path}');
       }
@@ -84,7 +98,8 @@ class Generator {
           formatter: formatter,
         );
         final generated = await generator.generate();
-        final strings = File(normalize(join(pubspecFile.parent.path, output, stringsName)));
+        final strings =
+            File(normalize(join(pubspecFile.parent.path, output, stringsName)));
         FileUtils.writeAsString(generated, file: strings);
         stdout.writeln('Generated: ${strings.absolute.path}');
       }
@@ -95,13 +110,15 @@ class Generator {
           fonts: flutter.fonts,
         );
         final generated = generator.generate();
-        final fonts = File(normalize(join(pubspecFile.parent.path, output, fontsName)));
+        final fonts =
+            File(normalize(join(pubspecFile.parent.path, output, fontsName)));
         FileUtils.writeAsString(generated, file: fonts);
         stdout.writeln('Generated: ${fonts.absolute.path}');
       }
 
       if (genRes.generateR) {
-        if (await File(join(pubspecFile.parent.path, output, 'R.dart')).exists()) {
+        if (await File(join(pubspecFile.parent.path, output, 'R.dart'))
+            .exists()) {
           Logger.debug('R.dart file exists, not re-generate!');
         } else {
           final ResourceGenerator generator = ResourceGenerator(
@@ -113,7 +130,8 @@ class Generator {
             fontsName: genRes.fonts.enabled ? fontsName : null,
           );
           final generated = generator.generate();
-          final resource = File(normalize(join(pubspecFile.parent.path, output, 'R.dart')));
+          final resource =
+              File(normalize(join(pubspecFile.parent.path, output, 'R.dart')));
           FileUtils.writeAsString(generated, file: resource);
           stdout.writeln('Generated: ${resource.absolute.path}');
         }
