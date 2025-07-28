@@ -31,4 +31,7 @@ dev_dependencies:
   lints: any
   build_runner: ^2.0.0
   json_serializable: ^6.0.0
-  version_gen: ^1.0.1
+  version_gen:
+    git:
+      url: https://github.com/bf-tuyennv/version_gen
+      ref: main
