@@ -12,7 +12,7 @@ version_gen:
   path: lib/src/utils/
 
 dependencies:
-  build: ^3.0.0
+  build: ^2.0.0
   path: ^1.8.0
   yaml: ^3.0.0
   mime: '>=1.0.0 <3.0.0'
@@ -31,7 +31,4 @@ dev_dependencies:
   lints: any
   build_runner: ^2.0.0
   json_serializable: ^6.0.0
-  version_gen:
-    git:
-      url: https://github.com/bf-tuyennv/version_gen
-      ref: main
+  version_gen: ^1.0.1
