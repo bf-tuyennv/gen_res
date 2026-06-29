@@ -8,11 +8,8 @@ documentation: https://github.com/nguyenvantuyen98/gen_res
 environment:
   sdk: '>=3.2.1 <4.0.0'
 
-version_gen:
-  path: lib/src/utils/
-
 dependencies:
-  build: '>=2.0.0 <3.0.0'
+  build: ^4.0.0
   path: '>=1.8.0 <2.0.0'
   yaml: '>=3.0.0 <4.0.0'
   mime: '>=1.0.0 <2.0.0'
@@ -20,7 +17,7 @@ dependencies:
   dartx: '>=1.0.0 <2.0.0'
   color: '>=3.0.0 <4.0.0'
   collection: '>=1.15.0 <2.0.0'
-  dart_style: '>=2.0.0 <3.0.0'
+  dart_style: ^3.0.0
   analyzer:
   args: '>=2.0.0 <3.0.0'
   pub_semver: '>=2.0.0 <3.0.0'
@@ -33,7 +30,6 @@ dev_dependencies:
   lints: ^3.0.0
   test: ^1.16.0
   flutter_lints: ^3.0.1
-  build_test: '>=2.0.0 <3.0.0'
+  build_test: ^3.0.0
   build_runner: '>=2.0.0 <3.0.0'
   json_serializable: '>=6.0.0 <7.0.0'
-  version_gen: '>=1.0.1 <2.0.0'

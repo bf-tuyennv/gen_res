@@ -47,7 +47,7 @@ class Generator {
     final genRes = config.pubspec.genRes;
     final output = config.pubspec.genRes.output;
     final lineLength = config.pubspec.genRes.lineLength;
-    final formatter = DartFormatter(pageWidth: lineLength, lineEnding: '\n');
+    final formatter = DartFormatter(pageWidth: lineLength, lineEnding: '\n', languageVersion: DartFormatter.latestLanguageVersion);
 
     final absoluteOutput = Directory(normalize(join(pubspecFile.parent.path, output)));
     if (!absoluteOutput.existsSync()) {
